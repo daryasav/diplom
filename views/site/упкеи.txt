@@ -1,0 +1,190 @@
+<div class="ttt">
+<?php $form = ActiveForm::begin(); ?>
+        <?php if(Yii::$app->user->identity->id_role == '3'){ ?>
+            <?= $form->field($mess, 'message')->textarea(['rows' => '3', 'class' => 'mess'])->label('') ?>
+            <div class="row" style="margin-top: -10px;">
+                <?= $form->field($mess, 'my_file')->fileInput(['class' => 'bbbb btn btn-light'])->label('') ?>
+                <?= Html::submitButton('Отправить', ['class' => 'bbbt', 'id' => 'refreshButton']) ?>
+            </div>
+        <?php }else{ ?>
+            <textarea rows='3' class='mess' name="Messages[message]"></textarea>
+            <input type='button' class="bbbt" value='Отправить' onclick="sendMessage(<?=$id?>, <?=$idus?>)">
+        <?php } ?>
+        <?php ActiveForm::end();?>
+    </div>
+
+
+    <h5 style='text-align: right;'>".$val->user->name."</h5>
+
+
+    <div style="padding-top: 30px;" class="chat">
+    <div class="soob" id="lasttenposts"> </div>
+    <div class="message" >
+        <?php $form = ActiveForm::begin(); ?>
+            <?php if(Yii::$app->user->identity->id_role == '3'){ ?>
+                <?= $form->field($mess, 'message')->textarea(['rows' => '3', 'class' => 'text mess'])->label('') ?>
+                <div style="margin-top: -10px;">
+                    <?= $form->field($mess, 'my_file')->fileInput(['class' => 'tog1 btn-light'])->label('') ?>
+                    <?= Html::submitButton('Отправить', ['class' => 'tog', 'id' => 'refreshButton']) ?>
+                </div>
+            <?php }else{ ?>
+                <textarea rows='3' class='text mess' name="Messages[message]"></textarea>
+                <input type='button' class="button" value='Отправить' onclick="sendMessage(<?=$id?>, <?=$idus?>)">
+            <?php } ?>
+        <?php ActiveForm::end();?>
+    </div>
+</div>
+
+
+
+/* ////////////////////////////////////////////// DIALOG /////////////////////////////////////////////////////// */
+/* @media (min-height: 723px){
+    .mrmr{
+        height: 70%;
+    }
+} */
+
+
+.put{
+    color: #7f9cb600;
+}
+.put:hover{
+    color: #7f9cb600;
+}
+/* .mess{
+    font-weight: 600;
+	width: 1000px;
+    color: black;
+} */
+.ttt{
+    padding-top: 20px;
+    top: 80%;
+    width: 950px;
+    position: fixed;
+    margin-left: 20px;
+    height: 300px;
+    margin-top: 10px;
+    
+}
+.mrmr{
+    overflow: auto;
+    margin: 0 0 150px 0;
+    overflow-y: scroll;
+    height: 490px;
+}
+.mrmr::-webkit-scrollbar { width: 0; }
+
+.sss{
+    height: 20%;
+}
+
+.bbb{
+    color: white;
+    background-color: #DC7326;
+    border: #DC7326;
+    /* margin-top: 5px; */
+    width: 110px;
+    height: 40px;
+    margin-top: -10px;
+    border-radius: 6px;
+}
+.bbbt{
+    color: white;
+    background-color: #DC7326;
+    border: #DC7326;
+    margin-left: 15px;
+    width: 110px;
+    height: 40px;
+    margin-top: 2px;
+    border-radius: 6px;
+}
+
+@media (max-width: 1185px){
+    /* .mess{
+        width: 800px;
+    } */
+    .ttt{
+        
+        top: 85%;
+        left: 5%;
+    }
+}
+@media (max-width: 870px){
+    .ttt{
+        top: 80%;
+        left: 0;
+        /* padding: 5px; */
+    }
+    /* .mess{
+        width: 600px;
+    } */
+}
+@media (max-width: 620px){
+    /* .mess{
+        width: 500px;
+    } */
+}
+@media (max-width: 550px){
+    .ttt{
+        top: 75%;
+    }
+    /* .mess{
+        width: 400px;
+    } */
+}
+@media (max-width: 420px){
+    .ttt{
+        top: 80%;
+        left: 0;
+    }
+    /* .mess{
+        top: 85%;
+        width: 360px;
+    } */
+    .bbbt{
+        left: 0;
+        margin-left: 5px;
+        margin-top: 60px;
+    }
+}
+@media (max-width: 376px){
+    .ttt{
+        top: 75%;
+        left: 0;
+    }
+    /* .mess{
+        width: 330px;
+    } */
+    .bbb{
+        width: 67px;
+        height: 40px;
+        font-size: 9px;
+    }
+}
+/* /////////////////// height ///////////////// */
+
+@media (max-height: 900px){
+    .ttt{
+        top: 75%;
+    }
+}
+@media (max-height: 700px){
+    .ttt{
+        top: 75%;
+    }
+}
+@media (max-height: 649px){
+    .ttt{
+        top: 70%;
+    }
+}
+@media (max-height: 540px){
+    .ttt{
+        top: 65%;
+    }
+}
+@media (max-height: 460px){
+    .ttt{
+        top: 60%;
+    }
+}
